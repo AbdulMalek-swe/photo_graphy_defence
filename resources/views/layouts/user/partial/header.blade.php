@@ -20,9 +20,6 @@
                     <a class="nav-link text-light" href="{{ url('/') }}#contact">Contact</a>
                 </li>
                 <li class="nav-item">
-                    {{-- <a class="nav-link" href="{{ url('/') }}#about">About</a> --}}
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="{{ url('/') }}#gallery">Gallery</a>
                 </li>
                  <li class="nav-item dropdown">
@@ -39,13 +36,18 @@
                      </ul>
                  </li>
                  </ul>
+                 <!-- Search bar -->
+                 <form class="d-flex ms-3" action="{{ url('more/photographer') }}" method="GET">
+                     <input class="form-control me-2" type="search" name="query" placeholder="Search photographers" aria-label="Search" required>
+                     <button class="btn btn-outline-success" type="submit">Search</button>
+                 </form>
              </div>
              </div>
          </nav>
          <!--navbar end-->
          <!--banner area start-->
          
-         <section class=" my-5">
+         <section class="my-5">
              <div class="row justify-content-center">
                  <div class="col-md-8 banner">
                      <p class="banner-title"><span>the Creative Photo agency</span></p>
@@ -79,9 +81,6 @@
         <li class="nav-item">
            <a class="nav-link text-light" href="{{ url('/') }}#contact">Contact</a>
        </li>
-       <li class="nav-item">
-           {{-- <a class="nav-link text-light" href="{{ url('/') }}#about">About</a> --}}
-       </li>
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Profile
@@ -96,6 +95,11 @@
             </ul>
         </li>
         </ul>
+        <!-- Search bar -->
+        <form class="d-flex ms-3" action="{{ url('more/photographer') }}" method="GET">
+            <input class="form-control me-2" type="search" name="query" placeholder="Search photographers" aria-label="Search" required>
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
     </div>
     </div>
 </nav>
