@@ -95,6 +95,7 @@
                         <p class="card-text">{{ $p['description'] }}.</p>
                         
                         {{-- <a class="btn btn-success" href="{{route('photographer.hire',['title'=>$p['title'], 'price'=>$p['price'],'user_id'=>Auth::id(), 'photographer_id'=>$show->user_id])}}">Hire Me</a> --}}
+                        <a href={{ route('stripe.index') }}>wlcom vai</a>
                         <button class="btn btn-success hire-btn" onclick="confirmAction()">Hire Me</button>
 
                         <script>

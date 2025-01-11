@@ -7,6 +7,7 @@ use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\GigController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\StripeController;
 use App\Models\Service;
 use App\Models\Profile;
 /*
@@ -47,6 +48,15 @@ Route::get('hire/list', [App\Http\Controllers\HireController::class, 'index'])->
 Route::get('hire/status/{id}', [App\Http\Controllers\HireController::class, 'status']);
 
 
+// more/gallary
+
+
+Route::get('more/gallery', [GalleryController::class, 'mainindex'])->name('more.gallery');
+Route::get('photographer/hire/{title}/{price}/{user_id}/{photographer_id}', [App\Http\Controllers\HireController::class, 'store'])->name('photographer.hire');
+Route::get('hire/list', [App\Http\Controllers\HireController::class, 'index'])->name('hire.list');
+Route::get('hire/status/{id}', [App\Http\Controllers\HireController::class, 'status']);
+
+
 //contact
 Route::post('contact/store', [App\Http\Controllers\ContactController::class, 'store'])->name('contact.store');
 Route::get('contact', [App\Http\Controllers\ContactController::class, 'index'])->name('contact');
@@ -63,3 +73,11 @@ Route::group([ "as"=>'user.' , "prefix"=>'user' , "namespace"=>'User' , "middlew
 Route::group([ "as"=>'admin.' , "prefix"=>'admin' , "namespace"=>'Admin' , "middleware"=>['auth','admin']],function(){
     Route::get('/dashboard', [App\Http\Controllers\Admin\AdminDashboardController::class, 'index'])->name('dashboard');
 });
+
+
+// payement here 
+Route::get('/stripe', [StripeController::class, 'index'])->name('stripe.index');
+Route::post('/stripe/payment', [StripeController::class, 'processPayment'])->name('stripe.payment');
+Route::get('/payment-success', function () {
+    return view('stripe.success');
+})->name('stripe.success');

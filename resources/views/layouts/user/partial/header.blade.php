@@ -16,6 +16,9 @@
                  <li class="nav-item">
                      <a class="nav-link active" href="{{ url('more/photographer') }}">Photographer</a>
                  </li>
+                 {{-- <li class="nav-item">
+                     <a class="nav-link active" href="{{ url('more/gallery') }}">Gallery</a>
+                 </li> --}}
                  <li class="nav-item text-light">
                     <a class="nav-link text-light" href="{{ url('/') }}#contact">Contact</a>
                 </li>
@@ -78,6 +81,9 @@
         <li class="nav-item">
             <a class="nav-link text-light" href="{{ url('more/photographer') }}">Photographer</a>
         </li>
+        {{-- <li class="nav-item">
+            <a class="nav-link text-light" href="{{ url('more/gallery') }}">Gallery</a>
+        </li> --}}
         <li class="nav-item">
            <a class="nav-link text-light" href="{{ url('/') }}#contact">Contact</a>
        </li>

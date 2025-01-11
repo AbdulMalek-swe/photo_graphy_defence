@@ -22,6 +22,15 @@ class GalleryController extends Controller
             //throw $th;
         }
     }
+    public function mainindex()
+    {
+        try {
+            $galleries = Gallery::all();
+            return view('dashboard.modules.gallery.main', compact('galleries'));
+        } catch (\Throwable $th) {
+            //throw $th;
+        }
+    }
 
     /**
      * Show the form for creating a new resource.
